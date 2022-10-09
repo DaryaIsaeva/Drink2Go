@@ -1,0 +1,149 @@
+.features {
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+
+.features__title {
+  margin-top: 0;
+  margin-bottom: 36px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+}
+
+.features__list {
+  display: grid;
+  row-gap: 32px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.features__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 66px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    top: 0;
+    width: 50px;
+    height: 56px;
+  }
+}
+
+.features__item--speed::before {
+  background-image: url("../img/icons&logo/speed.svg");
+}
+
+.features__item--comfort::before {
+  background-image: url("../img/icons&logo/comfort.svg");
+}
+
+.features__item--cheerfulness::before {
+  background-image: url("../img/icons&logo/cheerfulness.svg");
+}
+
+.features__item--ecology::before {
+  background-image: url("../img/icons&logo/ecology.svg");
+}
+
+.features__item h3 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 32px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.features__text {
+  margin: 0;
+  text-align: center;
+}
+
+@media (min-width: $tablet-width) {
+  .features {
+    padding-top: 60px;
+    padding-bottom: 100px;
+  }
+
+  .features__list {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 50px;
+    padding: 0 10px;
+  }
+
+  .features__title {
+    font-size: 42px;
+    line-height: 64px;
+    margin-bottom: 60px;
+  }
+
+  .features__item {
+    padding-top: 0;
+    padding-left: 72px;
+
+    &::before {
+      left: 0;
+    }
+  }
+
+  .features__item h3 {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 10px;
+    align-self: flex-start;
+  }
+
+  .features__text {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .features {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+
+  .features__title {
+    margin-bottom: 80px;
+  }
+
+  .features__list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 50px;
+    padding: 0;
+  }
+
+  .features__item {
+    padding-top: 76px;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &::before {
+      left: auto;
+    }
+  }
+
+  .features__item h3 {
+    align-self: center;
+  }
+
+  .features__text {
+    text-align: center;
+  }
+}

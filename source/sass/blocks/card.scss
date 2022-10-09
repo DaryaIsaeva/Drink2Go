@@ -1,0 +1,111 @@
+.card {
+  background-color: $base-white;
+  padding: 40px 20px 20px 20px;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 10px;
+  grid-template-rows: auto auto auto auto;
+}
+
+.card__image {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  margin: 0 auto;
+  margin-bottom: 19px;
+}
+
+.card__title {
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 32px;
+  color: $base-black;
+  text-decoration: none;
+  margin-bottom: 4px;
+}
+
+.card__text {
+  grid-column: 1/-1;
+  grid-row: 3/4;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.card__price {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+  margin-left: -2px;
+  margin-top: 2px;
+}
+
+.card__button {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  grid-column: 2/3;
+  grid-row: 4/5;
+  padding: 8px 20px 8px 46px;
+  background-color: $base-primary;
+  color: $base-white;
+  border: none;
+  border-radius: 4px;
+  position: relative;
+  margin-left: auto;
+
+  &::before {
+    position: absolute;
+    content: "";
+    background-image: url("../img/icons&logo/button-cart.svg");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 16px;
+    top: 10px;
+    left: 20px;
+    z-index: 1;
+  }
+
+  &:hover {
+    background-color: $primary-lighter;
+  }
+
+  &:focus {
+    background-color: $primary-lighter;
+    outline: none;
+  }
+
+  &:active {
+    background-color: $primary-darker;
+  }
+
+  &:disabled {
+    background-color: $base-grey;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .card {
+    padding: 50px 30px 30px 30px;
+  }
+
+  .card__image {
+    margin-bottom: 22px;
+  }
+
+  .card__title {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 9px;
+  }
+
+  .card__text {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+}

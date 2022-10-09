@@ -1,0 +1,46 @@
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo__link {
+  padding: 12px 0;
+}
+
+.logo__link img {
+  display: block;
+}
+
+.logo__text {
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0;
+  display: none;
+}
+
+@media (min-width: $tablet-width) {
+  .logo {
+    padding-right: 7px;
+  }
+
+  .logo__link img {
+    width: 82px;
+    height: 36px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .logo {
+    padding-right: 0;
+  }
+
+  .logo__link img {
+    width: 170px;
+  }
+
+  .logo__text {
+    display: block;
+    margin-left: 20px;
+    min-width: 126px;
+  }
+}

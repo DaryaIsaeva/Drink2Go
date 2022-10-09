@@ -1,0 +1,71 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox:hover .checkbox__mark,
+.checkbox:hover .checkbox__input:checked ~ .checkbox__mark,
+.checkbox__input:focus-visible ~ .checkbox__mark,
+.checkbox__input:focus-visible:checked ~ .checkbox__mark {
+  border: 2px solid $primary-lighter;
+  background-color: $primary-opacity;
+  box-sizing: border-box;
+
+  &::before {
+    top: -2px;
+    left: -2px;
+  }
+}
+
+.checkbox__mark {
+  position: relative;
+  display: block;
+  width: 42px;
+  height: 24px;
+  background-color: $base-grey;
+  border-radius: 12px;
+  margin-right: 12px;
+}
+
+.checkbox__mark::before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: block;
+  border-radius: 50%;
+  background-color: $base-white;
+  transform: translate(12px, 12px) translate(-50%, -50%);
+  transition: 500ms;
+}
+
+.checkbox__input:checked ~ .checkbox__mark {
+  background-color: $base-primary;
+}
+
+.checkbox__input:checked ~ .checkbox__mark::before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: block;
+  border-radius: 50%;
+  background-color: $base-white;
+  transform: translate(21px, 12px) translateY(-50%);
+  transition: 500ms;
+}
+
+.checkbox__input:disabled ~ .checkbox__mark,
+.checkbox:hover .checkbox__input:disabled:checked ~ .checkbox__mark {
+  background-color: $light-grey;
+  border-color: $light-grey;
+}
+
+.checkbox__input:disabled:checked ~ .checkbox__mark::before,
+.checkbox:hover .checkbox__input:disabled:checked ~ .checkbox__mark::before {
+  background-color: $lightest-grey;
+}
+
+.checkbox__input:disabled ~ .checkbox__name {
+  color: $base-grey;
+}

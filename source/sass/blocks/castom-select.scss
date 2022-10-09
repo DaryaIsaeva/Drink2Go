@@ -1,0 +1,126 @@
+.castom-select {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+  margin-bottom: 16px;
+  margin-left: 3px;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    background-image: url("../img/icons&logo/select-arrow.svg");
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 6px;
+    right: 7px;
+    cursor: pointer;
+  }
+}
+
+.castom-select--active::after {
+  transform: rotate(180deg);
+}
+
+.castom-select__value {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: $base-primary;
+  border: none;
+  background-color: transparent;
+  width: 165px;
+  padding: 4px 30px 4px 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $base-secondary;
+  }
+
+  &:focus {
+    background-color: $base-secondary;
+    outline: none;
+  }
+}
+
+.castom-select__list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  position: absolute;
+  top: 42px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  display: none;
+}
+
+.castom-select--active .castom-select__list {
+  display: block;
+}
+
+.castom-select__item {
+  padding: 8px 20px;
+  background-color: $base-white;
+  cursor: pointer;
+
+  &:first-of-type {
+    border-radius: 4px 4px 0 0;
+  }
+
+  &:last-of-type {
+    border-radius: 0 0 4px 4px;
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $base-secondary;
+  }
+
+  &:hover {
+    background-color: $base-secondary;
+  }
+
+  &:focus {
+    background-color: $base-secondary;
+    outline: none;
+  }
+
+  &--current {
+    color: $base-white;
+    background-color: $base-primary;
+  }
+
+  &--current:hover {
+    background-color: $base-primary;
+  }
+
+  &--current:focus {
+    background-color: $base-primary;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .castom-select {
+    column-gap: 10px;
+    justify-content: flex-end;
+    margin-bottom: 26px;
+
+    &::after {
+      height: 6px;
+      right: 9px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .castom-select {
+    margin-bottom: 0;
+    margin-top: -3px;
+  }
+}

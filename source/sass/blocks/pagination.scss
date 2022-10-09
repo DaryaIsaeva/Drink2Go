@@ -1,0 +1,131 @@
+.pagination__list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+}
+
+.pagination__item:not(:last-of-type) {
+  margin-right: 20px;
+}
+
+
+.pagination__button {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  min-width: 40px;
+  height: 40px;
+  background-color: $base-white;
+  color: $base-primary;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+
+  &:hover {
+    color: $base-white;
+    background-color: $primary-lighter;
+  }
+
+  &:focus {
+    color: $base-white;
+    background-color: $primary-lighter;
+    outline: none;
+  }
+
+  &:active {
+    color: $base-white;
+    background-color: $primary-darker;
+  }
+
+  &:disabled {
+    color: $base-white;
+    background-color: $light-grey;
+  }
+}
+
+.pagination__button--current {
+  font-weight: 600;
+  background-color: transparent;
+  color: $base-black;
+
+  &:hover {
+    color: inherit;
+    background-color: inherit;
+  }
+
+  &:active {
+    color: inherit;
+    background-color: inherit;
+  }
+}
+
+.pagination__button span {
+  display: none;
+}
+
+.pagination__button .pagination__arrow {
+  fill: $base-primary;
+}
+
+.pagination__button:hover .pagination__arrow,
+.pagination__button:focus .pagination__arrow,
+.pagination__button:active .pagination__arrow,
+.pagination__button:disabled .pagination__arrow {
+  fill: $base-white;
+}
+
+.pagination__button--prev .pagination__arrow {
+  transform: rotate(90deg);
+}
+
+.pagination__button--next .pagination__arrow {
+  transform: rotate(-90deg);
+}
+
+@media (min-width: $tablet-width) {
+  .pagination__list {
+    justify-content: flex-end;
+    margin-right: -20px;
+  }
+
+  .pagination__button {
+    padding: 8px;
+  }
+
+  .pagination__button span {
+    display: block;
+    font-size: 14px;
+  }
+
+  .pagination__arrow {
+    display: none;
+  }
+
+  .pagination__button--prev {
+    padding: 8px 43px 8px 45px;
+  }
+
+  .pagination__button--next {
+    padding: 8px 45px 8px 43px;
+  }
+
+  .pagination__item:first-of-type,
+  .pagination__item:nth-last-of-type(2) {
+    margin-right: 0;
+  }
+
+  .pagination__button--prev,
+  .pagination__item:nth-last-of-type(2) .pagination__button {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .pagination__button--next,
+  .pagination__item:nth-of-type(2) .pagination__button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}

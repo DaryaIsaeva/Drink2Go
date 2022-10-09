@@ -1,0 +1,126 @@
+.form {
+  display: grid;
+}
+
+.form__group {
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  &:not(:last-of-type) {
+    margin-bottom: 23px;
+  }
+}
+
+.form__title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 0;
+}
+
+.form__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 33px;
+  margin-bottom: 37px;
+}
+
+.form__button {
+  padding: 10.6px 14px;
+  width: 160px;
+  border: none;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-lighter;
+    color: $base-white;
+  }
+
+  &:focus {
+    background-color: $primary-lighter;
+    color: $base-white;
+    outline: none;
+  }
+
+  &:active {
+    background-color: $primary-darker;
+    color: $base-white;
+  }
+}
+
+.form__button--submit {
+  background-color: $base-primary;
+  color: $base-white;
+  margin-bottom: 24.5px;
+
+  &:disabled {
+    background-color: $base-grey;
+  }
+}
+
+.form__button--reset {
+  font-size: 14px;
+  background-color: $base-white;
+  color: $base-primary;
+
+  &:disabled {
+    background-color: $light-grey;
+    color: $base-white;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .form {
+    grid-template-columns: 226px 226px auto;
+    column-gap: 22px;
+    row-gap: 41px;
+  }
+
+  .form__buttons {
+    flex-direction: row;
+    grid-column: 1/-1;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding-right: 52px;
+  }
+
+  .form__button {
+    font-size: 14px;
+    width: 148px;
+    padding: 8px 3.5px;
+  }
+
+  .form__button--submit {
+    margin-bottom: 0;
+    margin-right: 24px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 22px;
+  }
+
+  .form__group:not(:last-of-type) {
+    margin-bottom: 9px;
+  }
+
+  .form__buttons {
+    padding: 0;
+    margin-top: 18px;
+  }
+
+  .form__button--submit {
+    margin-right: 21px;
+  }
+}

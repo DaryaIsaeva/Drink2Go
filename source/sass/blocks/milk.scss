@@ -1,0 +1,28 @@
+.milk {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.milk__title {
+  margin-bottom: 22px;
+}
+
+.milk__list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.milk__item:not(:last-of-type) {
+  margin-bottom: 21.45px;
+}
+
+@media (min-width: $tablet-width) {
+  .milk__title {
+    margin-bottom: 20px;
+  }
+
+  .milk__item:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+}
